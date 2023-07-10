@@ -1,0 +1,27 @@
+.box {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	& span {
+		font-size: 18px;
+	}
+}
+
+.colorPicker {
+	display: flex;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+
+
+}
+
+.img {
+	border-radius: 50%;
+	padding: 3px;
+
+	&.active {
+		border: 1px solid var(--dark);
+	}
+}

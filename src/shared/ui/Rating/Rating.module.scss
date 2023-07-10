@@ -1,0 +1,29 @@
+.Rating {
+
+	& svg {
+		width: 20px;
+		height: 20px;
+		opacity: .3;
+		stroke: turquoise;
+	}
+
+
+	& .star {
+		transition: all .2s ease-in-out;
+		padding-right: 5px;
+
+		&.filled svg {
+			opacity: 1;
+			fill: turquoise;
+		}
+
+		&.editable {
+			cursor: pointer;
+		}
+
+		& svg:focus {
+			outline: none;
+		}
+	}
+
+}

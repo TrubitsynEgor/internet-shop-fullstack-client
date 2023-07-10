@@ -1,0 +1,24 @@
+.reviewCard {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 40px 0;
+
+	@media (max-width: 980px) {
+		align-items: center;
+
+
+	}
+
+
+}
+
+.img {
+	object-fit: cover;
+	max-width: 100%;
+}
+
+.ratingBox {
+	display: flex;
+	gap: 15px;
+}

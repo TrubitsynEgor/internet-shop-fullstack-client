@@ -1,0 +1,65 @@
+.breadсrumbs {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	padding-top: 40px;
+	flex-wrap: wrap;
+
+	@media (max-width: 600px) {
+		padding-top: 0px;
+
+
+	}
+
+}
+
+.link {
+	color: rgba(#000, 0.5);
+	transition: all .3s ease-in-out;
+	position: relative;
+
+	&:hover {
+		color: turquoise;
+	}
+
+
+	&::after {
+		content: '/';
+		position: absolute;
+		right: -12px;
+		top: -1px;
+
+
+	}
+
+
+
+}
+
+.item {
+	position: relative;
+
+	&::after {
+		content: '/';
+		position: absolute;
+		right: -12px;
+		top: -1px;
+	}
+
+	&:last-child::after {
+		display: none;
+	}
+
+	&:last-child::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 140%;
+		height: 100%;
+		background-color: transparent;
+		z-index: 50;
+	}
+}
