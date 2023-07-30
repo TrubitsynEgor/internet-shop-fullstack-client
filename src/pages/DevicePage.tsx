@@ -1,3 +1,5 @@
+import { Layout } from './Layout'
+
 export const DevicePage = () => {
-  return <div>DevicePage</div>
+  return <Layout>DevicePage</Layout>
 }

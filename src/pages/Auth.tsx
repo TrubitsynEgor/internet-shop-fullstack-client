@@ -1,3 +1,5 @@
+import { Layout } from './Layout'
+
 export const Auth = () => {
-  return <div>Auth</div>
+  return <Layout>Auth</Layout>
 }
