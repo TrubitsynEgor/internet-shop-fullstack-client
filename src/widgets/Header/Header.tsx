@@ -11,7 +11,7 @@ export const Header: FC<HeaderProps> = observer(() => {
   console.log(user)
 
   return (
-    <header className={`${styles.header} bg-body-tertiary`}>
+    <header className={`${styles.header} bg-dark`}>
       <Container>
         <MainNavbar />
       </Container>
