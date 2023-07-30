@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx'
-import { IBrand, IDevice, IType } from '../types'
+import { IBrand, IDevice, IType } from '../shared'
 
 class DeviceStore {
   private _types: IType[]

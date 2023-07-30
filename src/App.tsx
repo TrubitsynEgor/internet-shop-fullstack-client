@@ -1,5 +1,10 @@
+import { Header } from './widgets/index.ts'
 function App() {
-  return <></>
+  return (
+    <>
+      <Header />
+    </>
+  )
 }
 
 export default App

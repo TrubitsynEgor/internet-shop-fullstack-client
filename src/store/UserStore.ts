@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx'
-import { IUser } from '../types/user'
+import { IUser } from '../shared'
 
 class UserStore {
   _isAuth: boolean

@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite'
-import deviceStore from '../store/DeviceStore'
+import { Layout } from './Layout'
 
 export const Shop = observer(() => {
-  return <>Shop</>
+  return <Layout></Layout>
 })
