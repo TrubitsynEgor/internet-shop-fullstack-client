@@ -7,9 +7,6 @@ import UserStore from '../../store/UserStore'
 interface HeaderProps extends DetailsHeadingProps {}
 
 export const Header: FC<HeaderProps> = observer(() => {
-  const { user } = UserStore
-  console.log(user)
-
   return (
     <header className={`${styles.header} bg-dark`}>
       <Container>

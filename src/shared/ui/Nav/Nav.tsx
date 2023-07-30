@@ -6,8 +6,11 @@ import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import { NavLink } from 'react-router-dom'
 import styles from './Nav.module.scss'
+import UserStore from '../../../store/UserStore'
 
 export function MainNavbar() {
+  const { user } = UserStore
+
   return (
     <Navbar expand="lg" bg="dark" variant="dark">
       <Container fluid>
