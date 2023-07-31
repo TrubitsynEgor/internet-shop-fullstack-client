@@ -1,5 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { Auth, Admin, Cart, DevicePage, Shop, NotFound } from './pages'
+import {
+  Auth,
+  Admin,
+  Cart,
+  DevicePage,
+  Shop,
+  NotFound,
+  Favorite,
+} from './pages'
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +33,10 @@ export const router = createBrowserRouter([
   {
     path: 'cart',
     element: <Cart />,
+  },
+  {
+    path: 'favorite',
+    element: <Favorite />,
   },
   {
     path: '*',

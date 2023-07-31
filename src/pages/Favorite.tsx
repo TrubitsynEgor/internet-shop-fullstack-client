@@ -3,9 +3,9 @@ import userStore from '../store/UserStore'
 import { Navigate } from 'react-router'
 import { Layout } from './Layout'
 
-export const Auth = observer(() => {
+export const Favorite = observer(() => {
   const { isAuth } = userStore
-  if (isAuth) return <Navigate to="/profile" replace={true} />
+  if (!isAuth) return <Navigate to="/login" replace={true} />
 
-  return <Layout>Auth</Layout>
+  return <Layout>Favorite</Layout>
 })

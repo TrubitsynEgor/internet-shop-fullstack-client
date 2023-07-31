@@ -11,9 +11,10 @@ import { BiSolidUser } from 'react-icons/bi'
 import { AiFillHeart } from 'react-icons/ai'
 import { BsFillCartCheckFill } from 'react-icons/bs'
 import { ImExit } from 'react-icons/im'
+import { observer } from 'mobx-react-lite'
 
-export function MainNavbar() {
-  const { user } = UserStore
+export const MainNavbar = observer(() => {
+  const { isAuth, user } = UserStore
 
   return (
     <Navbar expand="lg" bg="dark" variant="dark">
@@ -72,7 +73,7 @@ export function MainNavbar() {
           </Form>
 
           <div className={styles.btnGroup}>
-            {user && (
+            {isAuth && (
               <>
                 <NavLink to={'/favorite'}>
                   <Button variant="outline-light">
@@ -89,13 +90,19 @@ export function MainNavbar() {
             )}
 
             <NavLink to={user ? '/profile' : '/login'}>
-              <Button variant="outline-light">
+              <Button
+                // onClick={() => UserStore.setIsAuth(true)}
+                variant="outline-light"
+              >
                 {user && <span className={styles.username}>{user.name}</span>}
                 <BiSolidUser />
               </Button>
             </NavLink>
-            {user && (
-              <Button variant="outline-light">
+            {isAuth && (
+              <Button
+                onClick={() => UserStore.setIsAuth(false)}
+                variant="outline-light"
+              >
                 <ImExit />
               </Button>
             )}
@@ -104,4 +111,4 @@ export function MainNavbar() {
       </Container>
     </Navbar>
   )
-}
+})
