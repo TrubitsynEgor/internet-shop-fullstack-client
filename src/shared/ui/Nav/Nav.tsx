@@ -16,32 +16,49 @@ export function MainNavbar() {
 
   return (
     <Navbar expand="lg" bg="dark" variant="dark">
-      <Container fluid>
+      <Container fluid className={styles.container}>
         <NavLink to={'/'} className={styles.logo}>
           ETVShoP
         </NavLink>
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse id="navbarScroll" className={styles.collapse}>
           <Nav
-            className="me-auto my-2 my-lg-0"
+            className="me-auto my-2 my-lg-0 gap-4"
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
+            <NavLink to={'/'} className={styles.link}>
+              Home
+            </NavLink>
+            <NavDropdown
+              title="Catalog"
+              id="navbarScrollingDropdown"
+              className={styles.dropdown}
+            >
+              <NavLink to={'/'} className={styles.link}>
+                Home
+              </NavLink>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
+              <NavLink to={'/'} className={styles.link}>
+                Home
+              </NavLink>
+              <NavDropdown.Divider />
+              <NavLink to={'/'} className={styles.link}>
+                Home
+              </NavLink>
+              <NavDropdown.Divider />
+              <NavLink to={'/'} className={styles.link}>
+                Home
+              </NavLink>
+              <NavDropdown.Divider />
+              <NavLink to={'/'} className={styles.link}>
+                Home
+              </NavLink>
+              <NavDropdown.Divider />
+              <NavLink to={'/'} className={styles.link}>
+                Home
+              </NavLink>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -55,16 +72,21 @@ export function MainNavbar() {
 
           <div className={styles.btnGroup}>
             <Button variant="outline-light">
+              {user && <span>{user.name}</span>}
               <BiSolidUser />
             </Button>
 
-            <Button variant="outline-light">
-              <AiFillHeart />
-            </Button>
+            {user && (
+              <>
+                <Button variant="outline-light">
+                  <AiFillHeart />
+                </Button>
 
-            <Button variant="outline-light">
-              <BsFillCartCheckFill />
-            </Button>
+                <Button variant="outline-light">
+                  <BsFillCartCheckFill />
+                </Button>
+              </>
+            )}
           </div>
         </Navbar.Collapse>
       </Container>
