@@ -10,6 +10,7 @@ import UserStore from '../../../store/UserStore'
 import { BiSolidUser } from 'react-icons/bi'
 import { AiFillHeart } from 'react-icons/ai'
 import { BsFillCartCheckFill } from 'react-icons/bs'
+import { ImExit } from 'react-icons/im'
 
 export function MainNavbar() {
   const { user } = UserStore
@@ -71,21 +72,32 @@ export function MainNavbar() {
           </Form>
 
           <div className={styles.btnGroup}>
-            <Button variant="outline-light">
-              {user && <span>{user.name}</span>}
-              <BiSolidUser />
-            </Button>
-
             {user && (
               <>
-                <Button variant="outline-light">
-                  <AiFillHeart />
-                </Button>
+                <NavLink to={'/favorite'}>
+                  <Button variant="outline-light">
+                    <AiFillHeart />
+                  </Button>
+                </NavLink>
 
-                <Button variant="outline-light">
-                  <BsFillCartCheckFill />
-                </Button>
+                <NavLink to={'/cart'}>
+                  <Button variant="outline-light">
+                    <BsFillCartCheckFill />
+                  </Button>
+                </NavLink>
               </>
+            )}
+
+            <NavLink to={user ? '/profile' : '/login'}>
+              <Button variant="outline-light">
+                {user && <span className={styles.username}>{user.name}</span>}
+                <BiSolidUser />
+              </Button>
+            </NavLink>
+            {user && (
+              <Button variant="outline-light">
+                <ImExit />
+              </Button>
             )}
           </div>
         </Navbar.Collapse>
