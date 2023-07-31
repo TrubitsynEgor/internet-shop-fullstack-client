@@ -2,7 +2,7 @@ import styles from './Button.module.scss'
 import cn from 'classnames'
 import { IoIosArrowForward } from 'react-icons/io'
 import { FC } from 'react'
-import { DetailsBtnProps } from '@/shared/types'
+import { DetailsBtnProps } from '../..'
 
 interface ButtonProps extends DetailsBtnProps {
   appearance: 'primary' | 'ghost' | 'link'

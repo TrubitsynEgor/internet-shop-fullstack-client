@@ -7,6 +7,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import { NavLink } from 'react-router-dom'
 import styles from './Nav.module.scss'
 import UserStore from '../../../store/UserStore'
+import { BiSolidUser } from 'react-icons/bi'
+import { AiFillHeart } from 'react-icons/ai'
+import { BsFillCartCheckFill } from 'react-icons/bs'
 
 export function MainNavbar() {
   const { user } = UserStore
@@ -49,6 +52,20 @@ export function MainNavbar() {
             />
             <Button variant="outline-light">Search</Button>
           </Form>
+
+          <div className={styles.btnGroup}>
+            <Button variant="outline-light">
+              <BiSolidUser />
+            </Button>
+
+            <Button variant="outline-light">
+              <AiFillHeart />
+            </Button>
+
+            <Button variant="outline-light">
+              <BsFillCartCheckFill />
+            </Button>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
